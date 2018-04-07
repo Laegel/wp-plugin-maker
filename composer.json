@@ -1,0 +1,17 @@
+{
+    "name": "laegel/wp-plugin-maker",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laegel",
+            "email": "valentin.chouaf@laposte.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+	          "WP_Plugin_Maker\\": "src/"
+        }
+    },
+    "require": {}
+}

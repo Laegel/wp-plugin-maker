@@ -7,5 +7,4 @@ Author: Laegel
 Domain Path: /lang
 */
 
-require_once 'wp-plugin-maker/src/Plugin.php';
-require_once 'wp-plugin-maker/src/Controller.php';
+require_once 'wp-plugin-maker' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
