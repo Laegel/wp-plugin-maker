@@ -7,4 +7,4 @@ Author: Laegel
 Domain Path: /lang
 */
 
-require_once 'wp-plugin-maker' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+require_once 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';

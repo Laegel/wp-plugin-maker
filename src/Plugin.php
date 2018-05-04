@@ -4,21 +4,25 @@ namespace WP_Plugin_Maker;
 abstract class Plugin {
 
 	protected static $autoloader;
-	protected static $dir;
+	public static $dir;
     
     public static function init($dir) {
 		static::$dir = $dir;
 
 		$env = self::get_env();
+
+		if (!file_exists(static::$dir . DIRECTORY_SEPARATOR . 'require-' . $env . '.php')) {
+			return;
+		}
 		
 		$require = require static::$dir . DIRECTORY_SEPARATOR . 'require-' . $env . '.php';
-		static::$autoloader = function($class) use ($require) {
-			if (isset($require[$class])) {
-				require_once static::$dir . DIRECTORY_SEPARATOR . $require[$class]['path'];
-			}
-		};
+		// static::$autoloader = function($class) use ($require) {
+		// 	if (isset($require[$class])) {
+		// 		require_once static::$dir . DIRECTORY_SEPARATOR . $require[$class]['path'];
+		// 	}
+		// };
 
-		spl_autoload_register(static::$autoloader);
+		// spl_autoload_register(static::$autoloader);
 
 		// Adding filters/actions
 		if (!empty($require)) {
